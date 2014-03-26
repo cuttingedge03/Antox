@@ -6,8 +6,9 @@
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="55dp">
-        <TextView
+        android:layout_height="55dp"
+        android:background="@drawable/selector_main">
+        <View
             android:id="@+id/icon"
             android:layout_width="5dp"
             android:layout_height="match_parent"
