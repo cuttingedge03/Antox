@@ -1,6 +1,6 @@
 package im.tox.antox.activities;
 
-
+import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -22,8 +22,10 @@ import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.SearchView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -45,23 +47,25 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
-import im.tox.antox.R;
-import im.tox.antox.adapters.LeftPaneAdapter;
 import im.tox.antox.data.AntoxDB;
-import im.tox.antox.fragments.ChatFragment;
-import im.tox.antox.fragments.ContactsFragment;
-import im.tox.antox.tox.ToxDoService;
-import im.tox.antox.tox.ToxService;
-import im.tox.antox.tox.ToxSingleton;
 import im.tox.antox.utils.AntoxFriend;
+import im.tox.antox.fragments.ChatFragment;
 import im.tox.antox.utils.Constants;
+import im.tox.antox.fragments.ContactsFragment;
 import im.tox.antox.utils.DhtNode;
 import im.tox.antox.utils.Friend;
 import im.tox.antox.utils.FriendRequest;
+import im.tox.antox.adapters.LeftPaneAdapter;
 import im.tox.antox.utils.LeftPaneItem;
 import im.tox.antox.utils.Message;
+import im.tox.antox.R;
+import im.tox.antox.tox.ToxDoService;
+import im.tox.antox.tox.ToxService;
+import im.tox.antox.tox.ToxSingleton;
 import im.tox.antox.utils.UserDetails;
 import im.tox.jtoxcore.ToxUserStatus;
 
@@ -557,15 +561,6 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
             }
         });
         alertDialog.show();
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(int itemPosition, long itemId) {
-        String[] items = getResources().getStringArray(R.array.actions);
-                Log.d("NavigationItemSelected", items[itemPosition]);
-                //TODO: Filter friends list
-                return true;
-
     }
 
 
